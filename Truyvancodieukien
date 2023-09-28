@@ -1,16 +1,6 @@
-Để truy vấn dữ liệu của SQL Server có điều kiện là tháng 3, bạn có thể sử dụng hàm MONTH (date) để lấy giá trị tháng của một cột kiểu DateTime. Bạn cũng có thể sử dụng hàm YEAR (date) để lọc theo năm nếu cần. Ví dụ, nếu bạn muốn truy vấn tất cả các bản ghi trong bảng Employee có JoiningDate là tháng 3 năm 2021, bạn có thể viết mã SQL như sau:
+Để truy vấn dữ liệu của SQL Server có điều kiện là tháng 3, bạn có thể sử dụng hàm MONTH (date) để lấy giá trị tháng
 
-SQL
-Mã này do AI tạo ra. Xem xét và sử dụng một cách cẩn thận. Truy cập câu hỏi thường gặp của chúng tôi để biết thêm thông tin.
+SELECT * FROM "chỗ này ghi bản dữ liệu" WHERE MONTH (ghi cột ngày tháng) = 3 
 
-SELECT * FROM Employee WHERE MONTH (JoiningDate) = 3 AND YEAR (JoiningDate) = 2021
-
-Bạn cũng có thể sử dụng hàm DATEADD để tính toán ngày bắt đầu và kết thúc của một tháng nhất định, và sử dụng toán tử >= và < để so sánh với cột DateTime. Ví dụ, nếu bạn muốn truy vấn tất cả các bản ghi trong bảng Order có OrderDate là tháng 3 năm 2021, bạn có thể viết mã SQL như sau:
-
-SQL
-Mã này do AI tạo ra. Xem xét và sử dụng một cách cẩn thận. Truy cập câu hỏi thường gặp của chúng tôi để biết thêm thông tin.
-
-DECLARE @StartDate DATETIME, @EndDate DATETIME
-SET @StartDate = '2021-03-01'
-SET @EndDate = DATEADD (MONTH, 1, @StartDate)
-SELECT * FROM Order WHERE OrderDate >= @StartDate AND OrderDate < @EndDate
+vui lòng khi ghi cột ngày tháng vào có () giúp giùm =))
+chỗ chữ chỗ này ghi bản dữ liệu nhớ xóa dấu ngoặc kép. （￣︶￣）↗　
